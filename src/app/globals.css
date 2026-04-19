@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-acs-dark text-white antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Oswald', Impact, sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer components {
+  /* Bouton primaire jaune */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-acs-yellow text-acs-blue-dark font-bold text-sm uppercase tracking-widest rounded-none clip-diagonal transition-all duration-300;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 12px 100%);
+  }
+  .btn-primary:hover {
+    @apply bg-acs-yellow-dark scale-105 shadow-lg shadow-acs-yellow/30;
+  }
+
+  /* Bouton secondaire outline */
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 border-2 border-acs-yellow text-acs-yellow font-bold text-sm uppercase tracking-widest transition-all duration-300;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 12px 100%);
+  }
+  .btn-secondary:hover {
+    @apply bg-acs-yellow text-acs-blue-dark;
+  }
+
+  /* Card réutilisable */
+  .card {
+    @apply relative bg-white/5 border border-white/10 backdrop-blur-sm overflow-hidden transition-all duration-300;
+  }
+  .card:hover {
+    @apply -translate-y-2 shadow-2xl shadow-acs-blue/20 border-acs-yellow/40;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest bg-acs-yellow text-acs-blue-dark;
+  }
+
+  /* Section title */
+  .section-title {
+    @apply font-display text-4xl md:text-5xl font-bold uppercase tracking-tight;
+  }
+
+  /* Ligne décorative */
+  .title-underline::after {
+    content: '';
+    @apply block mt-3 w-16 h-1 bg-acs-yellow;
+  }
+
+  /* Track lines decoratives */
+  .track-lines {
+    background-image: repeating-linear-gradient(
+      -8deg,
+      transparent,
+      transparent 60px,
+      rgba(245, 197, 24, 0.04) 60px,
+      rgba(245, 197, 24, 0.04) 62px
+    );
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #F5C518, #FFE066);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-md border border-white/10;
+  }
+}
