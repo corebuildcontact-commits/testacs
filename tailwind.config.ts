@@ -23,8 +23,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-oswald)", "Impact", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Oswald", "Impact", "sans-serif"],
       },
       backgroundImage: {
         "track-pattern": "url('/track-bg.svg')",
