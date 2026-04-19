@@ -6,12 +6,14 @@ import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-inter",
   display: "swap",
 });
 
 const oswald = Oswald({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-oswald",
   display: "swap",
 });
